@@ -4,7 +4,7 @@ local H_CRY = caverealms.config.h_cry --9 --max height of glow crystals
 local H_CLAC = caverealms.config.h_clac --13 --max height of glow crystal stalactites
 
 function caverealms:above_solid(x,y,z,area,data)
-	local c_air = minetest.get_content_id("air")
+	local c_air = core.get_content_id("air")
 
 	local ai = area:index(x,y+1,z-3)
 	if data[ai] == c_air then
@@ -15,7 +15,7 @@ function caverealms:above_solid(x,y,z,area,data)
 end
 
 function caverealms:below_solid(x,y,z,area,data)
-	local c_air = minetest.get_content_id("air")
+	local c_air = core.get_content_id("air")
 
 	local ai = area:index(x,y-1,z-3)
 	if data[ai] == c_air then
@@ -33,7 +33,7 @@ function caverealms:stalagmite(x,y,z, area, data)
 	end
 	
 	--contest ids
-	local c_stone = minetest.get_content_id("default:stone")
+	local c_stone = core.get_content_id("default:stone")
 
 	local top = math.random(6,H_LAG) --grab a random height for the stalagmite
 	for j = 0, top do --y
@@ -71,7 +71,7 @@ function caverealms:stalactite(x,y,z, area, data)
 	end
 
 	--contest ids
-	local c_stone = minetest.get_content_id("default:stone")--("caverealms:limestone")
+	local c_stone = core.get_content_id("default:stone")--("caverealms:limestone")
 
 	local bot = math.random(-H_LAC, -6) --grab a random height for the stalagmite
 	for j = bot, 0 do --y
@@ -109,19 +109,19 @@ function caverealms:crystal_stalagmite(x,y,z, area, data, biome)
 	end
 	
 	--contest ids
-	local c_stone = minetest.get_content_id("default:stone")
-	local c_crystal = minetest.get_content_id("caverealms:glow_crystal")
-	local c_crystore = minetest.get_content_id("caverealms:glow_ore")
-	local c_emerald = minetest.get_content_id("caverealms:glow_emerald")
-	local c_emore = minetest.get_content_id("caverealms:glow_emerald_ore")
-	local c_mesecry = minetest.get_content_id("caverealms:glow_mese")
-	local c_meseore = minetest.get_content_id("default:stone_with_mese")
-	local c_ruby = minetest.get_content_id("caverealms:glow_ruby")
-	local c_rubore = minetest.get_content_id("caverealms:glow_ruby_ore")
-	local c_ameth = minetest.get_content_id("caverealms:glow_amethyst")
-	local c_amethore = minetest.get_content_id("caverealms:glow_amethyst_ore")
-	local c_ice = minetest.get_content_id("default:ice")
-	local c_thinice = minetest.get_content_id("caverealms:thin_ice")
+	local c_stone = core.get_content_id("default:stone")
+	local c_crystal = core.get_content_id("caverealms:glow_crystal")
+	local c_crystore = core.get_content_id("caverealms:glow_ore")
+	local c_emerald = core.get_content_id("caverealms:glow_emerald")
+	local c_emore = core.get_content_id("caverealms:glow_emerald_ore")
+	local c_mesecry = core.get_content_id("caverealms:glow_mese")
+	local c_meseore = core.get_content_id("default:stone_with_mese")
+	local c_ruby = core.get_content_id("caverealms:glow_ruby")
+	local c_rubore = core.get_content_id("caverealms:glow_ruby_ore")
+	local c_ameth = core.get_content_id("caverealms:glow_amethyst")
+	local c_amethore = core.get_content_id("caverealms:glow_amethyst_ore")
+	local c_ice = core.get_content_id("default:ice")
+	local c_thinice = core.get_content_id("caverealms:thin_ice")
 
 	--for randomness
 	local mode = 1
@@ -210,19 +210,19 @@ function caverealms:crystal_stalactite(x,y,z, area, data, biome)
 	end
 
 	--contest ids
-	local c_stone = minetest.get_content_id("default:stone")
-	local c_crystore = minetest.get_content_id("caverealms:glow_ore")
-	local c_crystal = minetest.get_content_id("caverealms:glow_crystal")
-	local c_emerald = minetest.get_content_id("caverealms:glow_emerald")
-	local c_emore = minetest.get_content_id("caverealms:glow_emerald_ore")
-	local c_mesecry = minetest.get_content_id("caverealms:glow_mese")
-	local c_meseore = minetest.get_content_id("default:stone_with_mese")
-	local c_ruby = minetest.get_content_id("caverealms:glow_ruby")
-	local c_rubore = minetest.get_content_id("caverealms:glow_ruby_ore")
-	local c_ameth = minetest.get_content_id("caverealms:glow_amethyst")
-	local c_amethore = minetest.get_content_id("caverealms:glow_amethyst_ore")
-	local c_ice = minetest.get_content_id("default:ice")
-	local c_thinice = minetest.get_content_id("caverealms:hanging_thin_ice")
+	local c_stone = core.get_content_id("default:stone")
+	local c_crystore = core.get_content_id("caverealms:glow_ore")
+	local c_crystal = core.get_content_id("caverealms:glow_crystal")
+	local c_emerald = core.get_content_id("caverealms:glow_emerald")
+	local c_emore = core.get_content_id("caverealms:glow_emerald_ore")
+	local c_mesecry = core.get_content_id("caverealms:glow_mese")
+	local c_meseore = core.get_content_id("default:stone_with_mese")
+	local c_ruby = core.get_content_id("caverealms:glow_ruby")
+	local c_rubore = core.get_content_id("caverealms:glow_ruby_ore")
+	local c_ameth = core.get_content_id("caverealms:glow_amethyst")
+	local c_amethore = core.get_content_id("caverealms:glow_amethyst_ore")
+	local c_ice = core.get_content_id("default:ice")
+	local c_thinice = core.get_content_id("caverealms:hanging_thin_ice")
 
 	--for randomness
 	local mode = 1
@@ -311,8 +311,8 @@ function caverealms:salt_stalagmite(x,y,z, area, data, biome)
 	end
 	
 	--contest ids
-	local c_stone = minetest.get_content_id("default:stone")
-	local c_salt = minetest.get_content_id("caverealms:salt_crystal")
+	local c_stone = core.get_content_id("default:stone")
+	local c_salt = core.get_content_id("caverealms:salt_crystal")
 	
 	local scale = math.random(2, 4)
 	if scale == 2 then
@@ -359,15 +359,15 @@ function caverealms:giant_shroom(x, y, z, area, data)
 	local c_stem
 
 	--as usual, grab the content ID's
-	if minetest.get_modpath("ethereal") then
-		c_stem = minetest.get_content_id("ethereal:mushroom_trunk")
-		c_cap = minetest.get_content_id("ethereal:mushroom")
+	if core.get_modpath("ethereal") then
+		c_stem = core.get_content_id("ethereal:mushroom_trunk")
+		c_cap = core.get_content_id("ethereal:mushroom")
 	else
-		c_stem = minetest.get_content_id("caverealms:mushroom_stem")
-		c_cap = minetest.get_content_id("caverealms:mushroom_cap")
+		c_stem = core.get_content_id("caverealms:mushroom_stem")
+		c_cap = core.get_content_id("caverealms:mushroom_cap")
 	end
 	
-	local c_gills = minetest.get_content_id("caverealms:mushroom_gills")
+	local c_gills = core.get_content_id("caverealms:mushroom_gills")
 
 	z = z - 5
 	--cap
