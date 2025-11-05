@@ -17,6 +17,7 @@ Source code: FreeBSD License (Simplified)
 The original caverealms was licensed as WTFPL.
 
 Contributors:
+- 2424barrier, maintained fork
 - Zeno, Shara RedCat - This rewrite
 - HeroOfTheWinds, Zeno - Original mod
 
