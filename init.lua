@@ -1,7 +1,7 @@
 caverealms = {} --create a container for functions and constants
 
 --grab a shorthand for the filepath of the mod
-local modpath = minetest.get_modpath(minetest.get_current_modname())
+local modpath = core.get_modpath(core.get_current_modname())
 
 --load companion lua files
 dofile(modpath.."/config.lua") --configuration file; holds various constants
@@ -10,7 +10,7 @@ dofile(modpath.."/nodes.lua") --node definitions
 dofile(modpath.."/functions.lua") --function definitions
 dofile(modpath.."/plants.lua")
 
-if minetest.get_modpath("mobs_monster") then
+if core.get_modpath("mobs_monster") then
 	if caverealms.config.dm_spawn == true then
 		dofile(modpath.."/dungeon_master.lua") --special DMs for DM's Lair biome
 	end
@@ -56,7 +56,7 @@ subterrain = {}
 
 -- On generated function
 
-minetest.register_on_generated(function(minp, maxp, seed)
+core.register_on_generated(function(minp, maxp, seed)
 	--if out of range of caverealms limits
 	if minp.y > YMAX or maxp.y < YMIN then
 		return --quit; otherwise, you'd have stalagmites all over the place
@@ -73,40 +73,40 @@ minetest.register_on_generated(function(minp, maxp, seed)
 	
 	--print ("[caverealms] chunk minp ("..x0.." "..y0.." "..z0..")") --tell people you are generating a chunk
 	
-	local vm, emin, emax = minetest.get_mapgen_object("voxelmanip")
+	local vm, emin, emax = core.get_mapgen_object("voxelmanip")
 	local area = VoxelArea:new{MinEdge=emin, MaxEdge=emax}
 	local data = vm:get_data()
 	
 	--grab content IDs
-	local c_air = minetest.get_content_id("air")
-	local c_stone = minetest.get_content_id("default:stone")
+	local c_air = core.get_content_id("air")
+	local c_stone = core.get_content_id("default:stone")
 	
-	local c_water = minetest.get_content_id("default:water_source")
-	local c_lava = minetest.get_content_id("default:lava_source")
-	local c_ice = minetest.get_content_id("default:ice")
-	local c_thinice = minetest.get_content_id("caverealms:thin_ice")
-	local c_crystal = minetest.get_content_id("caverealms:glow_crystal")
-	local c_gem = minetest.get_content_id("caverealms:glow_gem")
-	local c_saltgem = minetest.get_content_id("caverealms:salt_gem")
-	local c_spike = minetest.get_content_id("caverealms:spike")
-	local c_moss = minetest.get_content_id("caverealms:stone_with_moss")
-	local c_lichen = minetest.get_content_id("caverealms:stone_with_lichen")
-	local c_algae = minetest.get_content_id("caverealms:stone_with_algae")
-	local c_salt = minetest.get_content_id("caverealms:stone_with_salt")
-	local c_hcobble = minetest.get_content_id("caverealms:hot_cobble")
-	local c_gobsidian = minetest.get_content_id("caverealms:glow_obsidian")
-	local c_gobsidian2 = minetest.get_content_id("caverealms:glow_obsidian_2")
-	local c_coalblock = minetest.get_content_id("default:coalblock")
-	local c_desand = minetest.get_content_id("default:desert_sand")
-	local c_coaldust = minetest.get_content_id("caverealms:coal_dust")
-	local c_fungus = minetest.get_content_id("caverealms:fungus")
-	local c_mycena = minetest.get_content_id("caverealms:mycena")
-	local c_worm = minetest.get_content_id("caverealms:glow_worm")
-	local c_worm_green = minetest.get_content_id("caverealms:glow_worm_green")
-	local c_fire_vine = minetest.get_content_id("caverealms:fire_vine")
-	local c_iciu = minetest.get_content_id("caverealms:icicle_up")
-	local c_icid = minetest.get_content_id("caverealms:icicle_down")
-	local c_flame = minetest.get_content_id("caverealms:constant_flame")
+	local c_water = core.get_content_id("default:water_source")
+	local c_lava = core.get_content_id("default:lava_source")
+	local c_ice = core.get_content_id("default:ice")
+	local c_thinice = core.get_content_id("caverealms:thin_ice")
+	local c_crystal = core.get_content_id("caverealms:glow_crystal")
+	local c_gem = core.get_content_id("caverealms:glow_gem")
+	local c_saltgem = core.get_content_id("caverealms:salt_gem")
+	local c_spike = core.get_content_id("caverealms:spike")
+	local c_moss = core.get_content_id("caverealms:stone_with_moss")
+	local c_lichen = core.get_content_id("caverealms:stone_with_lichen")
+	local c_algae = core.get_content_id("caverealms:stone_with_algae")
+	local c_salt = core.get_content_id("caverealms:stone_with_salt")
+	local c_hcobble = core.get_content_id("caverealms:hot_cobble")
+	local c_gobsidian = core.get_content_id("caverealms:glow_obsidian")
+	local c_gobsidian2 = core.get_content_id("caverealms:glow_obsidian_2")
+	local c_coalblock = core.get_content_id("default:coalblock")
+	local c_desand = core.get_content_id("default:desert_sand")
+	local c_coaldust = core.get_content_id("caverealms:coal_dust")
+	local c_fungus = core.get_content_id("caverealms:fungus")
+	local c_mycena = core.get_content_id("caverealms:mycena")
+	local c_worm = core.get_content_id("caverealms:glow_worm")
+	local c_worm_green = core.get_content_id("caverealms:glow_worm_green")
+	local c_fire_vine = core.get_content_id("caverealms:fire_vine")
+	local c_iciu = core.get_content_id("caverealms:icicle_up")
+	local c_icid = core.get_content_id("caverealms:icicle_down")
+	local c_flame = core.get_content_id("caverealms:constant_flame")
 	
 	--mandatory values
 	local sidelen = x1 - x0 + 1 --length of a mapblock
@@ -115,7 +115,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
 	local minposxyz = {x=x0, y=y0, z=z0} --bottom corner
 	local minposxz = {x=x0, y=z0} --2D bottom corner
 	
-	local nvals_biome = minetest.get_perlin_map(np_biome, chulens2D):get2dMap_flat({x=x0+150, y=z0+50}) --2D noise for biomes (will be 3D humidity/temp later)
+	local nvals_biome = core.get_perlin_map(np_biome, chulens2D):get2dMap_flat({x=x0+150, y=z0+50}) --2D noise for biomes (will be 3D humidity/temp later)
 	
 	local nixyz = 1 --3D node index
 	local nixz = 1 --2D node index
