@@ -7,11 +7,11 @@ caverealms.config = {}
 local function setting(stype, name, default)
 	local value
 	if stype == "bool" then
-		value = core.settings:get_bool(CONFIG_FILE_PREFIX..name)
+		value = core.settings:get_bool(CONFIG_FILE_PREFIX .. name)
 	elseif stype == "string" then
-		value = core.settings:get(CONFIG_FILE_PREFIX..name)
+		value = core.settings:get(CONFIG_FILE_PREFIX .. name)
 	elseif stype == "number" then
-		value = tonumber(core.settings:get(CONFIG_FILE_PREFIX..name))
+		value = tonumber(core.settings:get(CONFIG_FILE_PREFIX .. name))
 	end
 	if value == nil then
 		value = default
@@ -47,7 +47,7 @@ setting("number", "dm_top", -14000) --upper limit
 setting("number", "dm_bot", -16000) --lower limit
 
 --should DMs spawn in DM Lair?
-setting("bool", "dm_spawn", true) 
+setting("bool", "dm_spawn", true)
 
 --Deep cave settings
 setting("number", "deep_cave", -7000) -- upper limit

@@ -1,6 +1,6 @@
 mobs:spawn({
 	name = "mobs_monster:dungeon_master",
-	nodes = {"caverealms:hot_cobble"},
+	nodes = { "caverealms:hot_cobble" },
 	max_light = 12,
 	min_light = 0,
 	chance = 7000,
@@ -12,5 +12,5 @@ mobs:spawn({
 		self.damage = 5
 		self.shoot_interval = 1.5
 		self.dogshoot_switch = 0
-	end
+	end,
 })
