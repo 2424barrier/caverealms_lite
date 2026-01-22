@@ -3,11 +3,11 @@
 -- glowing fungi
 core.register_node("caverealms:fungus", {
 	description = "Glowing Fungus",
-	tiles = {"caverealms_fungi.png"},
+	tiles = { "caverealms_fungi.png" },
 	inventory_image = "caverealms_fungi.png",
 	wield_image = "caverealms_fungi.png",
 	is_ground_content = true,
-	groups = {oddly_breakable_by_hand = 3, attached_node = 1},
+	groups = { oddly_breakable_by_hand = 3, attached_node = 1 },
 	light_source = 5,
 	paramtype = "light",
 	drawtype = "plantlike",
@@ -16,18 +16,18 @@ core.register_node("caverealms:fungus", {
 	visual_scale = 1.0,
 	selection_box = {
 		type = "fixed",
-		fixed = {-0.5, -0.5, -0.5, 0.5, -5/16, 0.5},
+		fixed = { -0.5, -0.5, -0.5, 0.5, -5 / 16, 0.5 },
 	},
 })
 
 -- mycena mushroom
 core.register_node("caverealms:mycena", {
 	description = "Mycena Mushroom",
-	tiles = {"caverealms_mycena.png"},
+	tiles = { "caverealms_mycena.png" },
 	inventory_image = "caverealms_mycena.png",
 	wield_image = "caverealms_mycena.png",
 	is_ground_content = true,
-	groups = {oddly_breakable_by_hand = 3, attached_node = 1},
+	groups = { oddly_breakable_by_hand = 3, attached_node = 1 },
 	light_source = 6,
 	paramtype = "light",
 	drawtype = "plantlike",
@@ -36,7 +36,7 @@ core.register_node("caverealms:mycena", {
 	visual_scale = 1.0,
 	selection_box = {
 		type = "fixed",
-		fixed = {-0.5, -0.5, -0.5, 0.5, -5/16, 0.5},
+		fixed = { -0.5, -0.5, -0.5, 0.5, -5 / 16, 0.5 },
 	},
 })
 
@@ -48,23 +48,23 @@ else
 	-- stem
 	core.register_node("caverealms:mushroom_stem", {
 		description = "Giant Mushroom Stem",
-		tiles = {"caverealms_mushroom_stem.png"},
+		tiles = { "caverealms_mushroom_stem.png" },
 		is_ground_content = true,
-		groups = {choppy=2, oddly_breakable_by_hand=1},
+		groups = { choppy = 2, oddly_breakable_by_hand = 1 },
 	})
 
 	-- cap
 	core.register_node("caverealms:mushroom_cap", {
 		description = "Giant Mushroom Cap",
-		tiles = {"caverealms_mushroom_cap.png"},
+		tiles = { "caverealms_mushroom_cap.png" },
 		is_ground_content = true,
-		groups = {choppy=2, oddly_breakable_by_hand=1,},
+		groups = { choppy = 2, oddly_breakable_by_hand = 1 },
 		drop = {
 			max_items = 1,
 			items = {
-				{items = {"caverealms:mushroom_sapling"}, rarity = 20},
-				{items = {"caverealms:mushroom_cap"}}
-			}
+				{ items = { "caverealms:mushroom_sapling" }, rarity = 20 },
+				{ items = { "caverealms:mushroom_cap" } },
+			},
 		},
 	})
 
@@ -72,16 +72,16 @@ else
 	core.register_node("caverealms:mushroom_sapling", {
 		description = "Mushroom Tree Sapling",
 		drawtype = "plantlike",
-		tiles = {"caverealms_mushroom_sapling.png"},
+		tiles = { "caverealms_mushroom_sapling.png" },
 		paramtype = "light",
 		sunlight_propagates = true,
 		is_ground_content = false,
 		walkable = false,
 		selection_box = {
 			type = "fixed",
-			fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16}
+			fixed = { -4 / 16, -0.5, -4 / 16, 4 / 16, 7 / 16, 4 / 16 },
 		},
-		groups = {snappy = 2, dig_immediate = 3, flammable = 2},
+		groups = { snappy = 2, dig_immediate = 3, flammable = 2 },
 		sounds = default.node_sound_leaves_defaults(),
 	})
 end
@@ -89,51 +89,49 @@ end
 -- gills
 core.register_node("caverealms:mushroom_gills", {
 	description = "Giant Mushroom Gills",
-	tiles = {"caverealms_mushroom_gills.png"},
+	tiles = { "caverealms_mushroom_gills.png" },
 	is_ground_content = true,
 	light_source = 10,
-	groups = {choppy=2, oddly_breakable_by_hand=1},
+	groups = { choppy = 2, oddly_breakable_by_hand = 1 },
 	drawtype = "plantlike",
 	paramtype = "light",
 })
 
-
 -- Saplings
 
 -- grow trees
-local add_tree = function (pos, ofx, ofy, ofz, schem)
+function caverealms.add_tree(pos, ofx, ofy, ofz, schem)
 	if not schem then
-		print ("Schematic not found")
+		print("Schematic not found")
 		return
 	end
-	core.swap_node(pos, {name = "air"})
-	core.place_schematic(
-		{x = pos.x - ofx, y = pos.y - ofy, z = pos.z - ofz},
-		schem, 0, nil, false)
+	core.swap_node(pos, { name = "air" })
+	core.place_schematic({ x = pos.x - ofx, y = pos.y - ofy, z = pos.z - ofz }, schem, 0, nil, false)
 end
 
-local path = core.get_modpath("caverealms").."/schematics/"
+local path = core.get_modpath("caverealms") .. "/schematics/"
 
 -- giant mushrooms
-function grow_caverealms_mushroom(pos)
-	add_tree(pos, 5, 0, 5, path .. "shroom.mts")
+function caverealms.grow_caverealms_mushroom(pos)
+	caverealms.add_tree(pos, 5, 0, 5, path .. "shroom.mts")
 end
 
 -- height check
 local function enough_height(pos, height)
 	local nod = core.line_of_sight(
-		{x = pos.x, y = pos.y + 1, z = pos.z},
-		{x = pos.x, y = pos.y + height, z = pos.z})
+		{ x = pos.x, y = pos.y + 1, z = pos.z },
+		{ x = pos.x, y = pos.y + height, z = pos.z }
+	)
 	if not nod then
-		return false 
+		return false
 	else
-		return true 
+		return true
 	end
 end
 
 core.register_abm({
 	label = "Caverealms grow sapling",
-	nodenames = {"ethereal:mushroom_sapling", "caverealms:mushroom_sapling"},
+	nodenames = { "ethereal:mushroom_sapling", "caverealms:mushroom_sapling" },
 	interval = 10,
 	chance = 50,
 	catch_up = false,
@@ -144,25 +142,28 @@ core.register_abm({
 			return
 		end
 		-- get node under sapling
-		local under =  core.get_node({x = pos.x, y = pos.y - 1, z = pos.z}).name
+		local under = core.get_node({ x = pos.x, y = pos.y - 1, z = pos.z }).name
 		-- check if registered
 		if not core.registered_nodes[node.name] then
 			return
 		end
 		-- ethereal sapling on lichen stone
-		if node.name == "ethereal:mushroom_sapling"
-		and under == "caverealms:stone_with_lichen"
-		and enough_height(pos, 10) then
-			grow_caverealms_mushroom(pos)
+		if
+			node.name == "ethereal:mushroom_sapling"
+			and under == "caverealms:stone_with_lichen"
+			and enough_height(pos, 10)
+		then
+			caverealms.grow_caverealms_mushroom(pos)
 		-- caverealms sapling on lichen stone
-		elseif node.name == "caverealms:mushroom_sapling"
-		and under == "caverealms:stone_with_lichen"
-		and enough_height(pos, 10) then
-			grow_caverealms_mushroom(pos)
+		elseif
+			node.name == "caverealms:mushroom_sapling"
+			and under == "caverealms:stone_with_lichen"
+			and enough_height(pos, 10)
+		then
+			caverealms.grow_caverealms_mushroom(pos)
 		end
 	end,
 })
-
 
 -- spread moss/lichen/algae to nearby cobblestone
 core.register_abm({
@@ -172,17 +173,18 @@ core.register_abm({
 		"caverealms:stone_with_lichen",
 		"caverealms:stone_with_algae",
 	},
-	neighbors = {"air"},
+	neighbors = { "air" },
 	interval = 16,
 	chance = 50,
 	catch_up = false,
 	action = function(pos, node)
 		local num = core.find_nodes_in_area_under_air(
-			{x = pos.x - 1, y = pos.y - 2, z = pos.z - 1},
-			{x = pos.x + 1, y = pos.y + 1, z = pos.z + 1},
-			"default:cobble")
+			{ x = pos.x - 1, y = pos.y - 2, z = pos.z - 1 },
+			{ x = pos.x + 1, y = pos.y + 1, z = pos.z + 1 },
+			"default:cobble"
+		)
 		if #num > 0 then
-			core.set_node(num[math.random(#num)], {name = node.name})
+			core.set_node(num[math.random(#num)], { name = node.name })
 		end
 	end,
 })
