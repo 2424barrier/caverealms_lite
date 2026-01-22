@@ -115,7 +115,7 @@ core.register_on_generated(function(minp, maxp, seed)
 	local minposxyz = {x=x0, y=y0, z=z0} --bottom corner
 	local minposxz = {x=x0, y=z0} --2D bottom corner
 	
-	local nvals_biome = core.get_perlin_map(np_biome, chulens2D):get2dMap_flat({x=x0+150, y=z0+50}) --2D noise for biomes (will be 3D humidity/temp later)
+	local nvals_biome = core.get_perlin_map(np_biome, chulens2D):get_2d_map_flat({x=x0+150, y=z0+50}) --2D noise for biomes (will be 3D humidity/temp later)
 	
 	local nixyz = 1 --3D node index
 	local nixz = 1 --2D node index
