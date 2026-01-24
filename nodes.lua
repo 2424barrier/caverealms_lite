@@ -254,9 +254,9 @@ core.register_node("caverealms:stone_with_moss", {
 		"default_cobble.png^caverealms_moss_side.png",
 	},
 	is_ground_content = true,
-	groups = { crumbly = 1, cracky = 3 },
+	groups = { cracky = 3 },
 	drop = "default:cobble",
-	sounds = default.node_sound_dirt_defaults({
+	sounds = default.node_sound_stone_defaults({
 		footstep = { name = "default_grass_footstep", gain = 0.25 },
 	}),
 })
@@ -270,9 +270,9 @@ core.register_node("caverealms:stone_with_lichen", {
 		"default_cobble.png^caverealms_lichen_side.png",
 	},
 	is_ground_content = true,
-	groups = { crumbly = 1, cracky = 3 },
+	groups = { cracky = 3 },
 	drop = "default:cobble",
-	sounds = default.node_sound_dirt_defaults({
+	sounds = default.node_sound_stone_defaults({
 		footstep = { name = "default_grass_footstep", gain = 0.25 },
 	}),
 })
@@ -286,9 +286,9 @@ core.register_node("caverealms:stone_with_algae", {
 		"default_cobble.png^caverealms_algae_side.png",
 	},
 	is_ground_content = true,
-	groups = { crumbly = 1, cracky = 3 },
+	groups = { cracky = 3 },
 	drop = "default:cobble",
-	sounds = default.node_sound_dirt_defaults({
+	sounds = default.node_sound_stone_defaults({
 		footstep = { name = "default_grass_footstep", gain = 0.25 },
 	}),
 })
