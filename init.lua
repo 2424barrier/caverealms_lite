@@ -7,6 +7,9 @@ local modpath = core.get_modpath(core.get_current_modname())
 dofile(modpath .. "/config.lua") --configuration file; holds various constants
 dofile(modpath .. "/crafting.lua") --crafting recipes
 dofile(modpath .. "/nodes.lua") --node definitions
+if core.get_modpath("moreblocks") then
+	dofile(modpath .. "/moreblocks.lua")
+end
 dofile(modpath .. "/functions.lua") --function definitions
 dofile(modpath .. "/plants.lua")
 

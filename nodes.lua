@@ -335,7 +335,7 @@ core.register_node("caverealms:glow_obsidian", {
 })
 
 --Glow Obsidian 2 - has traces of lava
-core.register_node("caverealms:glow_obsidian_2", {
+core.register_node("caverealms:glow_obsidian_lava", {
 	description = "Hot Glowing Obsidian",
 	tiles = { "caverealms_glow_obsidian2.png" },
 	is_ground_content = true,
@@ -356,34 +356,13 @@ core.register_node("caverealms:glow_obsidian_brick", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-core.register_node("caverealms:glow_obsidian_brick_2", {
+core.register_node("caverealms:glow_obsidian_brick_lava", {
 	description = "Glow Obsidian Brick",
 	tiles = { "caverealms_glow_obsidian_brick_2.png" },
 	light_source = 9,
 	groups = { cracky = 1, level = 2 },
 	sounds = default.node_sound_stone_defaults(),
 })
-
---Glow Obsidian Stairs/Slabs
-stairs.register_stair_and_slab(
-	"glow_obsidian_brick",
-	"caverealms:glow_obsidian_brick",
-	{ cracky = 1, level = 2 },
-	{ "caverealms_glow_obsidian_brick.png" },
-	"Glow Obsidian Brick Stair",
-	"Glow Obsidian Brick Slab",
-	default.node_sound_stone_defaults()
-)
-
-stairs.register_stair_and_slab(
-	"glow_obsidian_brick_2",
-	"caverealms:glow_obsidian_brick_2",
-	{ cracky = 1, level = 2 },
-	{ "caverealms_glow_obsidian_brick_2.png" },
-	"Glow Obsidian Brick Stair",
-	"Glow Obsidian Brick Slab",
-	default.node_sound_stone_defaults()
-)
 
 --Glow Obsidian Glass
 core.register_node("caverealms:glow_obsidian_glass", {
@@ -539,3 +518,6 @@ core.register_alias("caverealms:obsidian_1", "default:obsidian")
 core.register_alias("caverealms:obsidian_2", "default:obsidian")
 core.register_alias("caverealms:obsidian_3", "default:obsidian")
 core.register_alias("caverealms:obsidian_4", "default:obsidian")
+
+core.register_alias("caverealms:glow_obsidian_2", "caverealms:glow_obsidian_lava")
+core.register_alias("caverealms:glow_obsidian_brick_2", "caverealms:glow_obsidian_brick_lava")
