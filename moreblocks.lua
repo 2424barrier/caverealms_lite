@@ -21,5 +21,9 @@ for i = 1, #caverealms.stairplus_nodes, 1 do
 	local modname, nodename = caverealms.stairplus_nodes[i]:match("^(caverealms):(.*)$")
 	local fullname = modname .. ":" .. nodename
 	local def = core.registered_nodes[fullname]
+	if #def.tiles > 1 and def.drawtype and def.drawtype:find("glass") then
+		def.tiles = {def.tiles[1]}
+		def.paramtype2 = nil
+	end
 	stairsplus:register_all(modname, nodename, fullname, def)
 end
