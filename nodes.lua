@@ -349,7 +349,7 @@ core.register_node("caverealms:glow_obsidian_lava", {
 
 --Glow Obsidian Bricks
 core.register_node("caverealms:glow_obsidian_brick", {
-	description = "Glow Obsidian Brick",
+	description = "Glowing Obsidian Brick",
 	tiles = { "caverealms_glow_obsidian_brick.png" },
 	light_source = 7,
 	groups = { cracky = 1, level = 2 },
@@ -357,7 +357,7 @@ core.register_node("caverealms:glow_obsidian_brick", {
 })
 
 core.register_node("caverealms:glow_obsidian_brick_lava", {
-	description = "Glow Obsidian Brick",
+	description = "Hot Glowing Obsidian Brick",
 	tiles = { "caverealms_glow_obsidian_brick_2.png" },
 	light_source = 9,
 	groups = { cracky = 1, level = 2 },
