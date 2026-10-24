@@ -521,3 +521,13 @@ core.register_alias("caverealms:obsidian_4", "default:obsidian")
 
 core.register_alias("caverealms:glow_obsidian_2", "caverealms:glow_obsidian_lava")
 core.register_alias("caverealms:glow_obsidian_brick_2", "caverealms:glow_obsidian_brick_lava")
+
+core.register_alias("stairs:stair_glow_obsidian_brick", "caverealms:stair_glow_obsidian_brick")
+core.register_alias("stairs:stair_inner_glow_obsidian_brick", "caverealms:stair_glow_obsidian_brick_inner")
+core.register_alias("stairs:stair_outer_glow_obsidian_brick", "caverealms:stair_glow_obsidian_brick_outer")
+core.register_alias("stairs:slab_glow_obsidian_brick", "caverealms:slab_glow_obsidian_brick")
+
+core.register_alias("stairs:stair_glow_obsidian_brick_2", "caverealms:stair_glow_obsidian_brick_lava")
+core.register_alias("stairs:stair_inner_glow_obsidian_brick_2", "caverealms:stair_glow_obsidian_brick_lava_inner")
+core.register_alias("stairs:stair_outer_glow_obsidian_brick_2", "caverealms:stair_glow_obsidian_brick_lava_outer")
+core.register_alias("stairs:slab_glow_obsidian_brick_2", "caverealms:slab_glow_obsidian_brick_lava")
