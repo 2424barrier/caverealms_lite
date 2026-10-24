@@ -369,6 +369,7 @@ core.register_node("caverealms:glow_obsidian_glass", {
 	description = "Glow Obsidian Glass",
 	drawtype = "glasslike_framed_optional",
 	tiles = { "caverealms_glow_obsidian_glass.png", "default_obsidian_glass_detail.png" },
+	use_texture_alpha = "clip",
 	paramtype = "light",
 	light_source = 13,
 	sunlight_propagates = true,
